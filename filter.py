@@ -1,8 +1,9 @@
+#!/usr/bin/env python
+
 import rospy 
 import sys
 from sensor_msgs.msg import LaserScan
 import math 
-
 
 def callback(msg):
     
