@@ -1,0 +1,10 @@
+#goal 
+float64 goal
+
+--- 
+#result 
+bool result 
+
+--- 
+#feedback
+float32 dist

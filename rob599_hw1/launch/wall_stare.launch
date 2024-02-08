@@ -1,0 +1,16 @@
+<!-- 
+
+Used the doubler.launch file in the rob599_basic to write this launch file 
+
+-->
+
+
+<launch>
+
+    <node pkg = "rob599_hw1" name="stop_fetch" type= "stop_fetch.py">
+    </node>
+
+    <node pkg = "rob599_hw1" name="filter" type= "filter.py">
+    </node>
+
+</launch>
