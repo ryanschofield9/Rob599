@@ -1,6 +1,0 @@
-#inputs 
-float64 data 
----
-
-#output 
-bool val 
