@@ -1,0 +1,8 @@
+# goal
+int64 seconds
+---
+# result
+bool launch 
+---
+# feedback
+int64 progress
