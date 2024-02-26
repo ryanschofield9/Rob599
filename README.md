@@ -5,4 +5,4 @@ Files in rob599_hw1 folder.
 Files in rob599_hw2 and rob599_hw2_msgs folders. 
 
 # Project
-Files in applevision_vision, applevision_vision_msgs, and helpers folders. 
+Files in applevision_vision, applecontroller_msgs, and helpers folders. 
