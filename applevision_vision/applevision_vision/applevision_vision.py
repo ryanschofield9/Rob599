@@ -130,8 +130,8 @@ class AppleVisionHandler(Node):
                 y=int(boxes[0][1]),
                 w=int(boxes[0][2]),
                 h=int(boxes[0][3]),
-                image_w=1920, #640
-                image_h=1226, #360
+                image_w=640,
+                image_h=360,
                 confidence=float(confidences[0]))
             print(msg)
             self.pub.publish(msg)

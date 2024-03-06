@@ -3,8 +3,8 @@
 <package format="3">
   <name>helpers</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="ryan@todo.todo">ryan</maintainer>
+  <description>Helper functions for apple controller</description>
+  <maintainer email="schofier@oregonstate.edu">ryan</maintainer>
   <license>MIT</license>
 
   <test_depend>ament_copyright</test_depend>

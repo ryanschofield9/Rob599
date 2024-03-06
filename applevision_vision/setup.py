@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             'applevision_vision = applevision_vision.applevision_vision:main', 
-            'pub_image = applevision_vision.image_pub:main'
+            'pub_image = applevision_vision.image_pub:main', 
+            'find_center = applevision_vision.find_center:main'
         ],
     },
 )

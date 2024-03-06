@@ -10,13 +10,26 @@ class ImagePub(Node):
     def __init__(self):
         super().__init__('image_pub')
         self.pub = self.create_publisher(Image, 'palm_camera/image_rect_color', 10)
-        self.timer = self.create_timer(5, self.callback)
-        self.image = cv2.imread('/home/ryan/ros2_ws_applecontroller/src/applevision_vision/applevision_vision/apple.jpg')
+        self.timer = self.create_timer(1, self.callback)
+        self.image_center = cv2.imread('/home/ryan/ros2_ws_applecontroller/src/applevision_vision/applevision_vision/apple(2)(1).png')
+        self.image_right = cv2.imread('/home/ryan/ros2_ws_applecontroller/src/applevision_vision/applevision_vision/apple_right(1)(1).png')
+        self.image_left = cv2.imread('/home/ryan/ros2_ws_applecontroller/src/applevision_vision/applevision_vision/apple_left.jpg')
+        self.count = 0 
         self.bridge= CvBridge()
 
     def callback(self):
-        self.pub.publish(self.bridge.cv2_to_imgmsg(np.array(self.image),"bgr8" ))
-        self.get_logger().info('Publishing an image')
+        if self.count < 6: 
+            self.pub.publish(self.bridge.cv2_to_imgmsg(np.array(self.image_left),"bgr8" ))
+            self.get_logger().info('Publishing an image that is left')
+        elif self.count < 11: 
+            self.pub.publish(self.bridge.cv2_to_imgmsg(np.array(self.image_right),"bgr8" ))
+            self.get_logger().info('Publishing an image that is right')
+        else: 
+            self.pub.publish(self.bridge.cv2_to_imgmsg(np.array(self.image_center),"bgr8" ))
+            self.get_logger().info('Publishing an image that is center')
+        self.count = self.count + 1 
+
+
 
 def main(args=None):
     rclpy.init(args=args)
