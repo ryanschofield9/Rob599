@@ -22,7 +22,12 @@ setup(
         'console_scripts': [
             'applevision_vision = applevision_vision.applevision_vision:main', 
             'pub_image = applevision_vision.image_pub:main', 
-            'find_center = applevision_vision.find_center:main'
+            'find_center = applevision_vision.find_center:main',
+            'move = applevision_vision.move_arm:main',
+            'move_service = applevision_vision.move_arm_with_service_calls:main',
+            'speed_service = applevision_vision.speed_service:main',
+            'distance_service = applevision_vision.distance_service:main',
+            'tof_fake = applevision_vision.tof_pub_fake:main'
         ],
     },
 )
