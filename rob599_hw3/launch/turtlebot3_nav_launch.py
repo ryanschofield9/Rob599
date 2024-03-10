@@ -1,8 +1,11 @@
 from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription
+from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
+
+
 
 from ament_index_python.packages import get_package_share_directory
 
@@ -22,11 +25,16 @@ def generate_launch_description():
 				)
 			]), 
 			launch_arguments={
-				'use_sim_time': 'True',
-				'map' : '/home/ryan/ros2_ws_rob599/src/rob599_hw3/resource/map.yaml'
+				'use_sim_time': 'True', 
+				'params_file': os.path.join(
+					get_package_share_directory('turtlebot3_navigation2'), 
+					'/opt/ros/humble/share/nav2_bringup/params/nav2_params.yaml'
+				),
+				'map': '/home/ryan/ros2_ws_rob599/src/rob599_hw3/resource/map.yaml'
 			}.items()
-		), 
+		),
 		# Launch Simulation 
+		
 		IncludeLaunchDescription(
 			PythonLaunchDescriptionSource([
 				os.path.join(
@@ -39,4 +47,14 @@ def generate_launch_description():
 				'y_pose': '1.5'
 			}.items()
 		),
+		 Node(
+            #origin: [-6.29, -6.8, 0]
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_transform_publisher_map_odom',
+            output='screen',
+            arguments=['1.5', '-1.5', '0', '0', '0', '0', 'map', 'odom']
+        ),
+
+		
 	])

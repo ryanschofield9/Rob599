@@ -23,6 +23,7 @@ def generate_launch_description():
 				)
 			])
 		),
+		
 		# Launch Simulation 
 		IncludeLaunchDescription(
 			PythonLaunchDescriptionSource([
@@ -36,6 +37,7 @@ def generate_launch_description():
 				'y_pose': '1.5'
 			}.items()
 		),
+		
 		# Launch SLAM
 		IncludeLaunchDescription(
 			PythonLaunchDescriptionSource([
@@ -48,6 +50,7 @@ def generate_launch_description():
 				'use_sim_time': 'True'
 			}.items()
 		),
+		
 	])
 
 		

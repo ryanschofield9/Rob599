@@ -1,0 +1,5 @@
+#inputs
+string file
+---
+#outputs 
+bool result

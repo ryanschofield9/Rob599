@@ -1,0 +1,6 @@
+#inputs
+string place
+---
+#outputs 
+float64 x 
+float64 y

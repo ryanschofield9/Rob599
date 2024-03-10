@@ -1,0 +1,9 @@
+# goal
+string location
+---
+# result
+bool result 
+---
+# feedback
+float64 distance
+string location
